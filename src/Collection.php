@@ -21,7 +21,6 @@ class Collection extends IlluminateCollection
     protected $requiredFields = [
         'id',
         'name',
-        'price',
         'quantity'
     ];
 
@@ -87,9 +86,11 @@ class Collection extends IlluminateCollection
             throw new Exception('Quantity can not be less than 1');
         }
 
-        if (! is_numeric($item['price'])) {
-            throw new Exception('Price must be a numeric number');
-        }
+       if (isset($item['price'])) {
+	        if (! is_numeric($item['price'])) {
+	            throw new Exception('Price must be a numeric number');
+	        }
+		}
     }
 
 }
