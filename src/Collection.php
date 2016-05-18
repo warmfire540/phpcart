@@ -86,11 +86,10 @@ class Collection extends IlluminateCollection
             throw new Exception('Quantity can not be less than 1');
         }
 
-       if (isset($item['price'])) {
-	        if (! is_numeric($item['price'])) {
-	            throw new Exception('Price must be a numeric number');
+		if (isset($item['price'])) {
+			if (! is_numeric($item['price'])) {
+	        	throw new Exception('Price must be a numeric number');
 	        }
 		}
     }
-
 }
