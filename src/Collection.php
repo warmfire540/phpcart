@@ -21,7 +21,8 @@ class Collection extends IlluminateCollection
     protected $requiredFields = [
         'id',
         'name',
-        'quantity'
+        'quantity',
+        'size'
     ];
 
     public function setItems(array $items)
